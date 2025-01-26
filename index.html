@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LED Blinker</title>
+</head>
+<body>
+    <h1>Arduino LED Control</h1>
+    <button onclick="blinkLED()">Blink LED</button>
+
+    <script>
+        async function blinkLED() {
+            const response = await fetch('http://192.168.1.25/blink'); // Replace with your Arduino's IP
+            const message = await response.text();
+            alert(message);
+        }
+    </script>
+</body>
+</html>
